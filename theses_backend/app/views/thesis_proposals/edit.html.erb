@@ -1,0 +1,12 @@
+<h1>Editing thesis_proposal</h1>
+
+<% form_for(@thesis_proposal) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @thesis_proposal %> |
+<%= link_to 'Back', thesis_proposals_path %>

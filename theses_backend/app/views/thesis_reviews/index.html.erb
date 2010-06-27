@@ -1,0 +1,18 @@
+<h1>Listing thesis_reviews</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @thesis_reviews.each do |thesis_review| %>
+  <tr>
+    <td><%= link_to 'Show', thesis_review %></td>
+    <td><%= link_to 'Edit', edit_thesis_review_path(thesis_review) %></td>
+    <td><%= link_to 'Destroy', thesis_review, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New thesis_review', new_thesis_review_path %>

@@ -1,0 +1,880 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposals (20100627142257)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "thesis_proposals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text NOT NULL, "annotation" text NOT NULL, "tasks" text(500) NOT NULL, "programming_technologies" text NOT NULL, "execution_time" integer NOT NULL, "consultant_name" varchar(255) NOT NULL, "professor_id" integer NOT NULL, "student_id" integer NOT NULL, "accepted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627142257')[0m
+Migrating to CreateProfessors (20100627143131)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143131')[0m
+Migrating to CreateStudents (20100627143338)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143338')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20100627143338)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDROP TABLE "students"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100627143338'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposals (20100627142257)
+Migrating to CreateProfessors (20100627143131)
+Migrating to CreateStudents (20100627143338)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143338')[0m
+Migrating to CreateThesisProposalComments (20100627143757)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "thesis_proposal_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thesis_proposal_id" integer NOT NULL, "professor_id" integer NOT NULL, "description" text(500) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143757')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("thesis_proposal_comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposalComments (20100627143757)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "thesis_proposal_comments"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100627143757'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStudents (20100627143338)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "students"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100627143338'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProfessors (20100627143131)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "professors"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100627143131'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposals (20100627142257)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "thesis_proposals"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100627142257'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposals (20100627142257)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "thesis_proposals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text NOT NULL, "annotation" text NOT NULL, "description" text(500) NOT NULL, "programming_technologies" text NOT NULL, "execution_time" integer NOT NULL, "consultant_name" varchar(255) NOT NULL, "professor_id" integer NOT NULL, "student_id" integer NOT NULL, "accepted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627142257')[0m
+Migrating to CreateProfessors (20100627143131)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143131')[0m
+Migrating to CreateStudents (20100627143338)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143338')[0m
+Migrating to CreateThesisProposalComments (20100627143757)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "thesis_proposal_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thesis_proposal_id" integer NOT NULL, "professor_id" integer NOT NULL, "description" text(500) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143757')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("thesis_proposal_comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposals (20100627142257)
+Migrating to CreateProfessors (20100627143131)
+Migrating to CreateStudents (20100627143338)
+Migrating to CreateThesisProposalComments (20100627143757)
+Migrating to CreateTheses (20100627144156)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "theses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text NOT NULL, "annotation" text NOT NULL, "professor_id" integer NOT NULL, "student_id" integer NOT NULL, "thesis_proposal_id" integer NOT NULL, "graduation_date" date NOT NULL, "thesis_file_name" varchar(255), "department" varchar(255), "faculty" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627144156')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("theses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("thesis_proposal_comments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("thesis_proposals")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposals (20100627142257)
+Migrating to CreateProfessors (20100627143131)
+Migrating to CreateStudents (20100627143338)
+Migrating to CreateThesisProposalComments (20100627143757)
+Migrating to CreateTheses (20100627144156)
+Migrating to CreateThesisReviews (20100627144935)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "thesis_reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thesis_id" integer NOT NULL, "professor_id" integer NOT NULL, "topic_relevance" text, "brief_description" text(500), "layout_and_style" text, "contributions" text, "recommendations" text(500), "comments" text(500), "conclusion" text, "assessment" decimal(5,2), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627144935')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("theses")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("thesis_proposal_comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("thesis_proposals")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("thesis_reviews")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-27 17:57:48) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing StudentsController#index (for 127.0.0.1 at 2010-06-27 17:57:55) [GET]
+  [4;36;1mStudent Load (0.5ms)[0m   [0;1mSELECT * FROM "students" [0m
+Rendering template within layouts/students
+Rendering students/index
+Completed in 84ms (View: 48, DB: 1) | 200 OK [http://localhost/students]
+  [4;36;1mProfessor Create (0.4ms)[0m   [0;1mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Камен Хърсев', '2010-06-27 14:59:31', '2010-06-27 14:59:31')[0m
+  [4;35;1mProfessor Create (0.3ms)[0m   [0mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Димитър Димитров', '2010-06-27 14:59:31', '2010-06-27 14:59:31')[0m
+  [4;36;1mProfessor Load (0.6ms)[0m   [0;1mSELECT * FROM "professors" [0m
+  [4;36;1mProfessor Load (0.6ms)[0m   [0;1mSELECT * FROM "professors" [0m
+  [4;35;1mProfessor Destroy (0.3ms)[0m   [0mDELETE FROM "professors" WHERE "id" = 1[0m
+  [4;36;1mProfessor Destroy (0.2ms)[0m   [0;1mDELETE FROM "professors" WHERE "id" = 2[0m
+  [4;35;1mProfessor Create (0.3ms)[0m   [0mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Камен Хърсев', '2010-06-27 15:01:06', '2010-06-27 15:01:06')[0m
+  [4;36;1mProfessor Create (0.6ms)[0m   [0;1mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Димитър Димитров', '2010-06-27 15:01:06', '2010-06-27 15:01:06')[0m
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM "students" [0m
+  [4;36;1mStudent Create (0.4ms)[0m   [0;1mINSERT INTO "students" ("name", "created_at", "updated_at") VALUES('Иван Иванов', '2010-06-27 15:01:06', '2010-06-27 15:01:06')[0m
+  [4;35;1mStudent Create (0.3ms)[0m   [0mINSERT INTO "students" ("name", "created_at", "updated_at") VALUES('Петко Георгиев', '2010-06-27 15:01:06', '2010-06-27 15:01:06')[0m
+  [4;36;1mStudent Load (0.6ms)[0m   [0;1mSELECT * FROM "students" [0m
+  [4;35;1mProfessor Load (0.3ms)[0m   [0mSELECT * FROM "professors" [0m
+  [4;36;1mProfessor Load (0.6ms)[0m   [0;1mSELECT * FROM "professors" [0m
+
+
+Processing StudentsController#index to xml (for 127.0.0.1 at 2010-06-27 18:03:15) [GET]
+  [4;35;1mStudent Load (0.7ms)[0m   [0mSELECT * FROM "students" [0m
+Completed in 33ms (View: 25, DB: 1) | 200 OK [http://localhost/students.xml]
+
+
+Processing ThesisProposalsController#index (for 127.0.0.1 at 2010-06-27 18:03:28) [GET]
+  [4;36;1mThesisProposal Load (0.5ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
+Rendering template within layouts/thesis_proposals
+Rendering thesis_proposals/index
+Completed in 39ms (View: 11, DB: 1) | 200 OK [http://localhost/thesis_proposals/]
+
+
+Processing ThesisProposalsController#index to xml (for 127.0.0.1 at 2010-06-27 18:03:31) [GET]
+  [4;35;1mThesisProposal Load (0.5ms)[0m   [0mSELECT * FROM "thesis_proposals" [0m
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#show to xml (for 127.0.0.1 at 2010-06-27 18:09:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mThesisProposal Load (0.1ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find ThesisProposal with ID=1):
+  app/controllers/thesis_proposals_controller.rb:16:in `show'
+
+Rendered rescues/_trace (97.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:11:00) [POST]
+  Parameters: {"thesis_proposal"=>{"title"=>"Testing Proposal", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+Completed in 82ms (View: 73, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:12:17) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>100, "student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>2, "task"=>"Not blank", "programming_technologies"=>"Rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+
+ActiveRecord::UnknownAttributeError (unknown attribute: task):
+  app/controllers/thesis_proposals_controller.rb:43:in `new'
+  app/controllers/thesis_proposals_controller.rb:43:in `create'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:13:37) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>100, "student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>2, "task"=>nil, "programming_technologies"=>"Rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+
+ActiveRecord::UnknownAttributeError (unknown attribute: task):
+  app/controllers/thesis_proposals_controller.rb:43:in `new'
+  app/controllers/thesis_proposals_controller.rb:43:in `create'
+
+Rendered rescues/_trace (106.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:13:47) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>100, "student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>2, "task"=>nil, "programming_technologies"=>"Rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+
+ActiveRecord::UnknownAttributeError (unknown attribute: task):
+  app/controllers/thesis_proposals_controller.rb:43:in `new'
+  app/controllers/thesis_proposals_controller.rb:43:in `create'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:19:04) [POST]
+  Parameters: {"thesis_proposal"=>{"title"=>"Testing Proposal", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+Completed in 15ms (View: 6, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing StudentsController#show to xml (for 127.0.0.1 at 2010-06-27 18:19:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM "students" WHERE ("students"."id" = 1) [0m
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/students/1.xml]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-27 18:19:27) [GET]
+
+ActionController::RoutingError (No route matches "/professors/2.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-27 18:19:33) [GET]
+
+ActionController::RoutingError (No route matches "/professors/1.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-27 18:20:03) [GET]
+
+ActionController::RoutingError (No route matches "/students/.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-27 18:20:18) [GET]
+
+ActionController::RoutingError (No route matches "/professors/1.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-27 18:20:25) [GET]
+
+ActionController::RoutingError (No route matches "/professors/1.xml" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mProfessor Load (0.6ms)[0m   [0;1mSELECT * FROM "professors" [0m
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:21:59) [POST]
+  Parameters: {"thesis_proposal"=>{"title"=>"Testing Proposal", "professor_id"=>3, "student"=>{"name"=>"Иван Иванов", "created_at"=>Sun Jun 27 15:01:06 UTC 2010, "updated_at"=>Sun Jun 27 15:01:06 UTC 2010, "id"=>1}, "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+
+ActiveRecord::AssociationTypeMismatch (Student(#2176021680) expected, got HashWithIndifferentAccess(#2156215440)):
+  app/controllers/thesis_proposals_controller.rb:43:in `new'
+  app/controllers/thesis_proposals_controller.rb:43:in `create'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StudentsController#show to xml (for 127.0.0.1 at 2010-06-27 18:23:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mStudent Load (0.2ms)[0m   [0;1mSELECT * FROM "students" WHERE ("students"."id" = 1) [0m
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/students/1.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:24:02) [POST]
+  Parameters: {"thesis_proposal"=>{"student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>3, "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool..."}}
+Completed in 14ms (View: 4, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:24:14) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>100, "student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>3, "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool..."}}
+Completed in 83ms (View: 4, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:25:34) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>100, "student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>3, "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool..."}}
+Completed in 14ms (View: 4, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:25:58) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>3, "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool..."}}
+  [4;35;1mThesisProposal Create (0.0ms)[0m   [0mSQLite3::SQLException: thesis_proposals.consultant_name may not be NULL: INSERT INTO "thesis_proposals" ("execution_time", "student_id", "created_at", "title", "professor_id", "updated_at", "consultant_name", "programming_technologies", "annotation", "description", "accepted") VALUES(42, 1, '2010-06-27 15:25:58', 'Testing Proposal', 3, '2010-06-27 15:25:58', NULL, 'Rails', 'Very cool...', 'Verewlkfasdl fjasdlkg sd', NULL)[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: thesis_proposals.consultant_name may not be NULL: INSERT INTO "thesis_proposals" ("execution_time", "student_id", "created_at", "title", "professor_id", "updated_at", "consultant_name", "programming_technologies", "annotation", "description", "accepted") VALUES(42, 1, '2010-06-27 15:25:58', 'Testing Proposal', 3, '2010-06-27 15:25:58', NULL, 'Rails', 'Very cool...', 'Verewlkfasdl fjasdlkg sd', NULL)):
+  app/controllers/thesis_proposals_controller.rb:46:in `create'
+  app/controllers/thesis_proposals_controller.rb:45:in `create'
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:26:28) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "title"=>"Testing Proposal", "professor_id"=>3, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool..."}}
+  [4;36;1mThesisProposal Create (0.4ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("execution_time", "student_id", "created_at", "title", "professor_id", "updated_at", "consultant_name", "programming_technologies", "annotation", "description", "accepted") VALUES(42, 1, '2010-06-27 15:26:28', 'Testing Proposal', 3, '2010-06-27 15:26:28', 'Boiko', 'Rails', 'Very cool...', 'Verewlkfasdl fjasdlkg sd', NULL)[0m
+Completed in 44ms (View: 2, DB: 0) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:32:50) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>false}}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mThesisProposal Update (0.4ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:32:50', "accepted" = 'f' WHERE "id" = 1[0m
+Completed in 15ms (View: 1, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+  [4;35;1mThesis Load (0.2ms)[0m   [0mSELECT * FROM "theses" [0m
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:33:06) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mThesisProposal Update (0.3ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:33:06', "accepted" = 't' WHERE "id" = 1[0m
+Completed in 22ms (View: 1, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+  [4;36;1mThesis Load (0.3ms)[0m   [0;1mSELECT * FROM "theses" [0m
+  [4;35;1mThesis Load (0.2ms)[0m   [0mSELECT * FROM "theses" [0m
+  [4;36;1mThesis Load (0.7ms)[0m   [0;1mSELECT * FROM "theses" [0m
+  [4;36;1mThesis Load (0.4ms)[0m   [0;1mSELECT * FROM "theses" [0m
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:36:16) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>false}}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mThesisProposal Update (0.4ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:36:16', "accepted" = 'f' WHERE "id" = 1[0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:36:22) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mThesisProposal Update (0.3ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:36:22', "accepted" = 't' WHERE "id" = 1[0m
+Completed in 23ms (View: 1, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+  [4;35;1mThesis Load (0.3ms)[0m   [0mSELECT * FROM "theses" [0m
+  [4;36;1mThesis Load (0.5ms)[0m   [0;1mSELECT * FROM "theses" [0m
+  [4;35;1mThesisProposal Load (0.5ms)[0m   [0mSELECT * FROM "thesis_proposals" LIMIT 1[0m
+  [4;36;1mThesisProposal Load (0.4ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
+  [4;35;1mThesisProposal Load (0.4ms)[0m   [0mSELECT * FROM "thesis_proposals" [0m
+  [4;36;1mThesisProposal Load (0.4ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
+  [4;35;1mThesisProposal Update (0.7ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:39:58', "accepted" = 'f' WHERE "id" = 1[0m
+  [4;36;1mThesisProposal Update (1.2ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:40:03', "accepted" = 't' WHERE "id" = 1[0m
+  [4;35;1mThesis Load (0.2ms)[0m   [0mSELECT * FROM "theses" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "theses" [0m
+  [4;35;1mThesisProposal Update (0.5ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:41:08', "accepted" = 'f' WHERE "id" = 1[0m
+  [4;36;1mThesisProposal Update (0.4ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:41:08', "accepted" = 't' WHERE "id" = 1[0m
+  [4;36;1mThesis Load (0.4ms)[0m   [0;1mSELECT * FROM "theses" LIMIT 1[0m
+  [4;35;1mThesisProposal Load (0.6ms)[0m   [0mSELECT * FROM "thesis_proposals" LIMIT 1[0m
+  [4;36;1mThesisProposal Update (0.5ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:41:57', "accepted" = 'f' WHERE "id" = 1[0m
+  [4;36;1mThesisProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "thesis_proposals" LIMIT 1[0m
+  [4;35;1mThesisProposal Update (0.8ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:42:13', "accepted" = 'f' WHERE "id" = 1[0m
+  [4;36;1mThesisProposal Update (0.3ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:42:13', "accepted" = 't' WHERE "id" = 1[0m
+  [4;36;1mThesisProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "thesis_proposals" LIMIT 1[0m
+  [4;35;1mThesisProposal Update (0.9ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:42:36', "accepted" = 't' WHERE "id" = 1[0m
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:43:05) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>false}}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mThesisProposal Update (0.4ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:43:05' WHERE "id" = 1[0m
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:43:11) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mThesisProposal Update (0.3ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:43:11', "accepted" = 't' WHERE "id" = 1[0m
+
+ActiveRecord::RecordInvalid (Validation failed: Programming technologies can't be blank):
+  app/models/thesis_proposal.rb:18:in `create_thesis_from_proposal'
+  app/controllers/thesis_proposals_controller.rb:62:in `update'
+  app/controllers/thesis_proposals_controller.rb:61:in `update'
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:43:44) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>false}}
+  [4;36;1mThesisProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.5ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:43:44' WHERE "id" = 1[0m
+Completed in 24ms (View: 3, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:43:50) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;36;1mThesisProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.3ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:43:50', "accepted" = 't' WHERE "id" = 1[0m
+
+ActiveRecord::RecordInvalid (Validation failed: Programming technologies can't be blank):
+  app/models/thesis_proposal.rb:18:in `create_thesis_from_proposal'
+  app/controllers/thesis_proposals_controller.rb:62:in `update'
+  app/controllers/thesis_proposals_controller.rb:61:in `update'
+
+Rendered rescues/_trace (47.9ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;36;1mThesis Load (0.2ms)[0m   [0;1mSELECT * FROM "theses" [0m
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:46:30) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>false}}
+  [4;36;1mThesisProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.8ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:46:30' WHERE "id" = 1[0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:46:36) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;36;1mThesisProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.3ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:46:36', "accepted" = 't' WHERE "id" = 1[0m
+
+ActiveRecord::RecordInvalid (Validation failed: Thesis proposal can't be blank):
+  app/models/thesis_proposal.rb:18:in `create_thesis_from_proposal'
+  app/controllers/thesis_proposals_controller.rb:62:in `update'
+  app/controllers/thesis_proposals_controller.rb:61:in `update'
+
+Rendered rescues/_trace (48.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:46:44) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;36;1mThesisProposal Load (0.4ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.3ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:46:44', "accepted" = 't' WHERE "id" = 1[0m
+
+ActiveRecord::RecordInvalid (Validation failed: Thesis proposal can't be blank):
+  app/models/thesis_proposal.rb:18:in `create_thesis_from_proposal'
+  app/controllers/thesis_proposals_controller.rb:62:in `update'
+  app/controllers/thesis_proposals_controller.rb:61:in `update'
+
+Rendered rescues/_trace (121.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:47:33) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;36;1mThesisProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.7ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:47:33', "accepted" = 't' WHERE "id" = 1[0m
+  [4;36;1mThesis Create (0.0ms)[0m   [0;1mSQLite3::SQLException: theses.graduation_date may not be NULL: INSERT INTO "theses" ("student_id", "graduation_date", "thesis_proposal_id", "created_at", "title", "professor_id", "updated_at", "faculty", "annotation", "thesis_file_name", "department") VALUES(1, NULL, 1, '2010-06-27 15:47:33', 'Testing Proposal', 3, '2010-06-27 15:47:33', NULL, 'Very cool...', NULL, NULL)[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: theses.graduation_date may not be NULL: INSERT INTO "theses" ("student_id", "graduation_date", "thesis_proposal_id", "created_at", "title", "professor_id", "updated_at", "faculty", "annotation", "thesis_file_name", "department") VALUES(1, NULL, 1, '2010-06-27 15:47:33', 'Testing Proposal', 3, '2010-06-27 15:47:33', NULL, 'Very cool...', NULL, NULL)):
+  app/models/thesis_proposal.rb:18:in `create_thesis_from_proposal'
+  app/controllers/thesis_proposals_controller.rb:62:in `update'
+  app/controllers/thesis_proposals_controller.rb:61:in `update'
+
+Rendered rescues/_trace (128.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mThesis Load (0.2ms)[0m   [0mSELECT * FROM "theses" LIMIT 1[0m
+  [4;36;1mThesis Load (0.2ms)[0m   [0;1mSELECT * FROM "theses" [0m
+  [4;35;1mStudent Load (0.6ms)[0m   [0mSELECT * FROM "students" LIMIT 1[0m
+  [4;36;1mStudent Load (0.3ms)[0m   [0;1mSELECT * FROM "students" LIMIT 1[0m
+  [4;35;1mStudent Load (0.4ms)[0m   [0mSELECT * FROM "students" WHERE ("students"."id" = 2) LIMIT 1[0m
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 18:54:14) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>42, "student_id"=>1, "created_at"=>Sun Jun 27 15:26:28 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>3, "updated_at"=>Sun Jun 27 15:26:28 UTC 2010, "id"=>1, "consultant_name"=>"Boiko", "programming_technologies"=>"Rails", "description"=>"Verewlkfasdl fjasdlkg sd", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mThesisProposal Update (0.3ms)[0m   [0;1mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 15:54:14', "accepted" = 't' WHERE "id" = 1[0m
+  [4;35;1mThesis Load (0.2ms)[0m   [0mSELECT * FROM "theses" WHERE ("theses"."thesis_proposal_id" = 1) LIMIT 1[0m
+  [4;36;1mThesis Create (0.0ms)[0m   [0;1mSQLite3::SQLException: theses.graduation_date may not be NULL: INSERT INTO "theses" ("student_id", "graduation_date", "thesis_proposal_id", "created_at", "title", "professor_id", "updated_at", "faculty", "annotation", "thesis_file_name", "department") VALUES(1, NULL, 1, '2010-06-27 15:54:14', 'Testing Proposal', 3, '2010-06-27 15:54:14', NULL, 'Very cool...', NULL, NULL)[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: theses.graduation_date may not be NULL: INSERT INTO "theses" ("student_id", "graduation_date", "thesis_proposal_id", "created_at", "title", "professor_id", "updated_at", "faculty", "annotation", "thesis_file_name", "department") VALUES(1, NULL, 1, '2010-06-27 15:54:14', 'Testing Proposal', 3, '2010-06-27 15:54:14', NULL, 'Very cool...', NULL, NULL)):
+  app/models/thesis_proposal.rb:16:in `create_thesis_from_proposal'
+  app/controllers/thesis_proposals_controller.rb:62:in `update'
+  app/controllers/thesis_proposals_controller.rb:61:in `update'
+
+Rendered rescues/_trace (128.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "theses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text NOT NULL, "annotation" text NOT NULL, "professor_id" integer NOT NULL, "student_id" integer NOT NULL, "thesis_proposal_id" integer NOT NULL, "graduation_date" date NOT NULL, "thesis_file_name" varchar(255), "department" varchar(255), "faculty" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "thesis_proposal_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thesis_proposal_id" integer NOT NULL, "professor_id" integer NOT NULL, "description" text(500) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "thesis_proposals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text NOT NULL, "annotation" text NOT NULL, "description" text(500) NOT NULL, "programming_technologies" text NOT NULL, "execution_time" integer NOT NULL, "consultant_name" varchar(255) NOT NULL, "professor_id" integer NOT NULL, "student_id" integer NOT NULL, "accepted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "thesis_reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thesis_id" integer NOT NULL, "professor_id" integer NOT NULL, "topic_relevance" text, "brief_description" text(500), "layout_and_style" text, "contributions" text, "recommendations" text(500), "comments" text(500), "conclusion" text, "assessment" decimal(5,2), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100627144935')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100627142257')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100627143131')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100627143338')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100627143757')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100627144156')[0m
+  [4;35;1mProfessor Load (0.2ms)[0m   [0mSELECT * FROM "professors" [0m
+  [4;36;1mProfessor Create (0.4ms)[0m   [0;1mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Камен Хърсев', '2010-06-27 15:54:46', '2010-06-27 15:54:46')[0m
+  [4;35;1mProfessor Create (0.3ms)[0m   [0mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Димитър Димитров', '2010-06-27 15:54:46', '2010-06-27 15:54:46')[0m
+  [4;36;1mStudent Load (0.2ms)[0m   [0;1mSELECT * FROM "students" [0m
+  [4;35;1mStudent Create (0.4ms)[0m   [0mINSERT INTO "students" ("name", "created_at", "updated_at") VALUES('Иван Иванов', '2010-06-27 15:54:46', '2010-06-27 15:54:46')[0m
+  [4;36;1mStudent Create (0.2ms)[0m   [0;1mINSERT INTO "students" ("name", "created_at", "updated_at") VALUES('Петко Георгиев', '2010-06-27 15:54:46', '2010-06-27 15:54:46')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateThesisProposals (20100627142257)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "thesis_proposals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text NOT NULL, "annotation" text NOT NULL, "description" text(500) NOT NULL, "programming_technologies" text NOT NULL, "execution_time" integer NOT NULL, "consultant_name" varchar(255) NOT NULL, "professor_id" integer NOT NULL, "student_id" integer NOT NULL, "accepted" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627142257')[0m
+Migrating to CreateProfessors (20100627143131)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143131')[0m
+Migrating to CreateStudents (20100627143338)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143338')[0m
+Migrating to CreateThesisProposalComments (20100627143757)
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "thesis_proposal_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thesis_proposal_id" integer NOT NULL, "professor_id" integer NOT NULL, "description" text(500) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627143757')[0m
+Migrating to CreateTheses (20100627144156)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "theses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" text NOT NULL, "annotation" text NOT NULL, "professor_id" integer NOT NULL, "student_id" integer NOT NULL, "thesis_proposal_id" integer, "graduation_date" date, "thesis_file_name" varchar(255), "department" varchar(255), "faculty" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627144156')[0m
+Migrating to CreateThesisReviews (20100627144935)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "thesis_reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "thesis_id" integer NOT NULL, "professor_id" integer NOT NULL, "topic_relevance" text, "brief_description" text(500), "layout_and_style" text, "contributions" text, "recommendations" text(500), "comments" text(500), "conclusion" text, "assessment" decimal(5,2), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100627144935')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("professors")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("students")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("theses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("thesis_proposal_comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("thesis_proposals")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("thesis_reviews")[0m
+  [4;36;1mProfessor Load (0.4ms)[0m   [0;1mSELECT * FROM "professors" [0m
+  [4;35;1mProfessor Create (0.4ms)[0m   [0mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Камен Хърсев', '2010-06-27 15:55:44', '2010-06-27 15:55:44')[0m
+  [4;36;1mProfessor Create (0.3ms)[0m   [0;1mINSERT INTO "professors" ("name", "created_at", "updated_at") VALUES('Димитър Димитров', '2010-06-27 15:55:44', '2010-06-27 15:55:44')[0m
+  [4;35;1mStudent Load (0.2ms)[0m   [0mSELECT * FROM "students" [0m
+  [4;36;1mStudent Create (0.4ms)[0m   [0;1mINSERT INTO "students" ("name", "created_at", "updated_at") VALUES('Иван Иванов', '2010-06-27 15:55:44', '2010-06-27 15:55:44')[0m
+  [4;35;1mStudent Create (0.3ms)[0m   [0mINSERT INTO "students" ("name", "created_at", "updated_at") VALUES('Петко Георгиев', '2010-06-27 15:55:44', '2010-06-27 15:55:44')[0m
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 18:56:26) [POST]
+  Parameters: {"thesis_proposal"=>{"title"=>"Testing Proposal", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+Completed in 20ms (View: 8, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing StudentsController#show to xml (for 127.0.0.1 at 2010-06-27 19:10:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mStudent Load (0.2ms)[0m   [0;1mSELECT * FROM "students" WHERE ("students"."id" = 2) [0m
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/students/2.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 19:16:45) [POST]
+  Parameters: {"thesis_proposal"=>{"student_id"=>2, "title"=>"Testing Proposal", "professor_id"=>1, "programming_technologies"=>"rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+Completed in 14ms (View: 5, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-06-27 19:17:00) [POST]
+  Parameters: {"thesis_proposal"=>{"execution_time"=>45, "student_id"=>2, "title"=>"Testing Proposal", "professor_id"=>1, "consultant_name"=>"Peter", "programming_technologies"=>"rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool..."}}
+  [4;35;1mThesisProposal Create (0.5ms)[0m   [0mINSERT INTO "thesis_proposals" ("execution_time", "student_id", "created_at", "title", "professor_id", "updated_at", "consultant_name", "programming_technologies", "annotation", "description", "accepted") VALUES(45, 2, '2010-06-27 16:17:00', 'Testing Proposal', 1, '2010-06-27 16:17:00', 'Peter', 'rails', 'Very cool...', 'Very, logn, fsdfsd f,sdf asdf ....', NULL)[0m
+Completed in 16ms (View: 2, DB: 0) | 201 Created [http://localhost/thesis_proposals.xml]
+  [4;36;1mThesis Load (0.2ms)[0m   [0;1mSELECT * FROM "theses" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "theses" [0m
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 19:17:19) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>45, "student_id"=>2, "created_at"=>Sun Jun 27 16:17:00 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>1, "updated_at"=>Sun Jun 27 16:17:00 UTC 2010, "id"=>1, "approved"=>true, "consultant_name"=>"Peter", "programming_technologies"=>"rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool...", "accepted"=>nil}}
+  [4;36;1mThesisProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+
+ActiveRecord::UnknownAttributeError (unknown attribute: approved):
+  app/controllers/thesis_proposals_controller.rb:62:in `update'
+  app/controllers/thesis_proposals_controller.rb:61:in `update'
+
+Rendered rescues/_trace (35.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ThesisProposalsController#show to xml (for 127.0.0.1 at 2010-06-27 19:17:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/thesis_proposals/1.xml]
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 19:17:48) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>45, "student_id"=>2, "created_at"=>Sun Jun 27 16:17:00 UTC 2010, "title"=>"Testing Proposal", "professor_id"=>1, "updated_at"=>Sun Jun 27 16:17:00 UTC 2010, "id"=>1, "consultant_name"=>"Peter", "programming_technologies"=>"rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;36;1mThesisProposal Load (0.4ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.4ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 16:17:48', "accepted" = 't' WHERE "id" = 1[0m
+  [4;36;1mThesis Load (0.1ms)[0m   [0;1mSELECT * FROM "theses" WHERE ("theses"."thesis_proposal_id" = 1) LIMIT 1[0m
+  [4;35;1mThesis Create (0.3ms)[0m   [0mINSERT INTO "theses" ("student_id", "graduation_date", "thesis_proposal_id", "created_at", "title", "professor_id", "updated_at", "faculty", "annotation", "thesis_file_name", "department") VALUES(2, NULL, 1, '2010-06-27 16:17:48', 'Testing Proposal', 1, '2010-06-27 16:17:48', NULL, 'Very cool...', NULL, NULL)[0m
+Completed in 26ms (View: 1, DB: 1) | 200 OK [http://localhost/thesis_proposals/1.xml]
+  [4;36;1mSQL (5.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "theses" [0m
+  [4;35;1mThesis Load (0.2ms)[0m   [0mSELECT * FROM "theses" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "theses" [0m
+  [4;35;1mThesis Load (0.5ms)[0m   [0mSELECT * FROM "theses" [0m
+
+
+Processing ThesesController#show to xml (for 127.0.0.1 at 2010-06-27 19:18:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mThesis Load (0.3ms)[0m   [0;1mSELECT * FROM "theses" WHERE ("theses"."id" = 1) [0m
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/theses/1.xml]
+
+
+Processing ThesisProposalsController#show to xml (for 127.0.0.1 at 2010-06-27 19:18:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mThesisProposal Load (0.3ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/thesis_proposals/1.xml]
+
+
+Processing ThesisProposalsController#update to xml (for 127.0.0.1 at 2010-06-27 19:18:55) [PUT]
+  Parameters: {"id"=>"1", "thesis_proposal"=>{"execution_time"=>45, "student_id"=>2, "created_at"=>Sun Jun 27 16:17:00 UTC 2010, "title"=>"Changed", "professor_id"=>1, "updated_at"=>Sun Jun 27 16:17:48 UTC 2010, "id"=>1, "consultant_name"=>"Peter", "programming_technologies"=>"rails", "description"=>"Very, logn, fsdfsd f,sdf asdf ....", "annotation"=>"Very cool...", "accepted"=>true}}
+  [4;36;1mThesisProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 1) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mThesisProposal Update (0.7ms)[0m   [0mUPDATE "thesis_proposals" SET "updated_at" = '2010-06-27 16:18:55', "title" = 'Changed' WHERE "id" = 1[0m
+  [4;36;1mThesis Load (0.3ms)[0m   [0;1mSELECT * FROM "theses" WHERE ("theses"."thesis_proposal_id" = 1) LIMIT 1[0m
+  [4;35;1mThesis Update (0.3ms)[0m   [0mUPDATE "theses" SET "updated_at" = '2010-06-27 16:18:55', "title" = 'Changed' WHERE "id" = 1[0m
+Completed in 91ms (View: 1, DB: 2) | 200 OK [http://localhost/thesis_proposals/1.xml]
+
+
+Processing ThesesController#show to xml (for 127.0.0.1 at 2010-06-27 19:19:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mThesis Load (0.3ms)[0m   [0;1mSELECT * FROM "theses" WHERE ("theses"."id" = 1) [0m
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/theses/1.xml]
+
+
+Processing ProfessorsController#show to xml (for 127.0.0.1 at 2010-06-27 19:28:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProfessor Load (0.2ms)[0m   [0;1mSELECT * FROM "professors" WHERE ("professors"."id" = 1) [0m
+Completed in 79ms (View: 66, DB: 0) | 200 OK [http://localhost/professors/1.xml]
+
+
+Processing ProfessorsController#show to xml (for 127.0.0.1 at 2010-06-27 19:29:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProfessor Load (0.2ms)[0m   [0mSELECT * FROM "professors" WHERE ("professors"."id" = 2) [0m
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/professors/2.xml]

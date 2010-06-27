@@ -1,0 +1,18 @@
+<h1>Listing thesis_proposal_comments</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @thesis_proposal_comments.each do |thesis_proposal_comment| %>
+  <tr>
+    <td><%= link_to 'Show', thesis_proposal_comment %></td>
+    <td><%= link_to 'Edit', edit_thesis_proposal_comment_path(thesis_proposal_comment) %></td>
+    <td><%= link_to 'Destroy', thesis_proposal_comment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New thesis_proposal_comment', new_thesis_proposal_comment_path %>
