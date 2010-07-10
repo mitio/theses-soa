@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="ThesesPropolsal" xmlns="http://jbpm.org/4.3/jpdl">
+	<start g="18,29,48,48" name="start">
+		<transition to="thesis proposal input"/>
+	</start>
+
+	<end g="879,412,48,48" name="end"/>
+	<end-error g="25,418,48,48" name="error"/>
+
+	<java class="org.middleware.theses.UserInput" g="110,26,152,52" method="thesisProposalInput" name="thesis proposal input">
+      <transition to="submit thesis proposal"/>
+	</java>
+
+	<java class="org.middleware.theses.ServiceConnector" g="306,27,192,52" method="submitThesisProposal" name="submit thesis proposal">
+      <transition to="thesis proposal to review"/>
+	</java>
+
+	<state g="539,26,169,52" name="thesis proposal to review">
+<!--
+		<on event="start">
+			<event-listener class="org.middleware.theses.SubmitThesisProposal"/>
+		</on>
+ -->
+		<transition to="end"/>
+	</state>
+</process>
