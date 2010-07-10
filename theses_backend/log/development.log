@@ -1233,3 +1233,115 @@ Processing ThesisProposalsController#index (for 127.0.0.1 at 2010-07-10 23:07:52
   [4;36;1mThesisProposal Load (0.0ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
 Rendering thesis_proposals/index
 Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/thesis_proposals?annotation=Just+a+test.&title=Test+Thesis&professor_id=1&description=No+desc.&execution_time=33&consultant_name=Kamen&student_id=1&programming_technologies=jBPM+%2B+Rails&_method=POST]
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-10 23:24:29) [POST]
+  Parameters: {"professor_id"=>"1", "title"=>"kamen", "student_id"=>"1", "consultant_name"=>"nqkoi", "description"=>"no descr", "annotation"=>"hursev", "execution_time"=>"20", "programming_technologies"=>"ruby"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (unprocessable_entity)
+  [4;35;1mThesisProposal Load (0.0ms)[0m   [0mSELECT * FROM "thesis_proposals" [0m
+  [4;36;1mThesisProposal Load (1.0ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "thesis_proposals" [0m
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-10 23:26:01) [POST]
+  Parameters: {"professor_id"=>"1", "title"=>"1", "student_id"=>"1", "consultant_name"=>"1", "description"=>"1", "annotation"=>"1", "execution_time"=>"1", "programming_technologies"=>"1"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (56.0ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-10 23:27:10) [POST]
+  Parameters: {"professor_id"=>"1", "title"=>"1", "student_id"=>"1", "consultant_name"=>"1", "description"=>"1", "annotation"=>"1", "execution_time"=>"1", "programming_technologies"=>"1"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-10 23:31:51) [POST]
+  Parameters: {"professor_id"=>"1", "title"=>"kamen", "student_id"=>"1", "consultant_name"=>"cons", "description"=>"no descr \":-)\"'/1", "annotation"=>"intervali s falimiq '", "execution_time"=>"22", "programming_technologies"=>":-)"}
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby186/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby186/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-10 23:36:57) [POST]
+  Parameters: {"professor_id"=>"1", "title"=>"kamen", "student_id"=>"1", "consultant_name"=>"consultant gosho", "description"=>"some description 'that needs to be entered", "annotation"=>"hursev", "execution_time"=>"12", "programming_technologies"=>"ruby 'n rails"}
+Rendering thesis_proposals/new
+Completed in 40ms (View: 20, DB: 0) | 200 OK [http://localhost/thesis_proposals]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "thesis_proposals" [0m
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-10 23:43:08) [POST]
+  Parameters: {"thesis_propolsal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"kamrne", "consultant_name"=>"consultant BoikU", "description"=>"descr wha:-)", "annotation"=>"whatever", "programming_technologies"=>"ruby 'n jBOSS", "execution_time"=>"21"}}
+Rendering thesis_proposals/new
+Completed in 25ms (View: 15, DB: 0) | 200 OK [http://localhost/thesis_proposals]
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-10 23:45:08) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"kamen", "consultant_name"=>"consultant name", "description"=>"descr with space", "annotation"=>"hursev", "programming_technologies"=>"ruby 'n JBPM", "execution_time"=>"12"}}
+  [4;36;1mThesisProposal Create (2.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-10 20:45:08', 'kamen', 1, 'consultant name', 'descr with space', 'hursev', 'ruby ''n JBPM', 12, '2010-07-10 20:45:08')[0m
+Redirected to http://localhost:3000/thesis_proposals/2
+Completed in 5608ms (DB: 2) | 302 Found [http://localhost/thesis_proposals]
+
+
+Processing ThesisProposalsController#show (for 127.0.0.1 at 2010-07-10 23:45:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mThesisProposal Load (0.0ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 2) [0m
+Rendering thesis_proposals/show
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/thesis_proposals/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "thesis_proposals" [0m
+  [4;36;1mThesisProposal Load (0.0ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
