@@ -17,14 +17,16 @@ public class ServiceConnector {
 
 	public void submitThesisProposal() throws Exception {
 		System.out.println("Submitting your thesis proposal...");
-		post("/thesis_proposals", "post", "thesis_proposal", Main.getThesisProposal());
+		if (post("/thesis_proposals.xml", "post", "thesis_proposal", Main.getThesisProposal())) {
+//			Main.getExecutionService().setVariable(Main.getProcessInstanceByKey("ThesesPropolsal").getId(), "thesisProposal", Main.getThesisProposal());
+		}
 	}
 
-	protected static void post(String path, String method, String scope, HashMap<String, String> fields) throws IOException {
+	protected static Boolean post(String path, String method, String scope, HashMap<String, String> fields) throws IOException {
 		StringBuilder postFields = new StringBuilder();
 		for (Map.Entry<String, String> entry : Main.getThesisProposal().entrySet()) {
 			String key = entry.getKey();
-			if(scope != null || scope.isEmpty()) {
+			if(scope != null && !scope.isEmpty()) {
 				key = scope + "[" + key + "]";
 			}
 			String value = entry.getValue();
@@ -40,6 +42,7 @@ public class ServiceConnector {
 		System.out.println("POST " + url.toString());
 		
 		doPost(path, postFields.toString());
+		return true;
 	}
 	
 	protected static void doPost(String path, String data){

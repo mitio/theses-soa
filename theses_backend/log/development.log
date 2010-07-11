@@ -1345,3 +1345,113 @@ Rendering thesis_proposals/show
 Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/thesis_proposals/2]
   [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "thesis_proposals" [0m
   [4;36;1mThesisProposal Load (0.0ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 00:29:04) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"qqqq", "consultant_name"=>"qwsderftg", "description"=>"wsx", "annotation"=>"qaz", "programming_technologies"=>"qwer", "execution_time"=>"1"}}
+  [4;36;1mThesisProposal Create (1.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-10 21:29:04', 'qqqq', 1, 'qwsderftg', 'wsx', 'qaz', 'qwer', 1, '2010-07-10 21:29:04')[0m
+Completed in 121ms (View: 10, DB: 1) | 201 Created [http://localhost/thesis_proposals.xml]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "thesis_proposals" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "thesis_proposals" [0m
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 01:58:52) [POST]
+  Parameters: {"professor_id"=>"1", "title"=>"Testing Human Tasks", "student_id"=>"1", "consultant_name"=>"Petrov", "description"=>"No desc.", "annotation"=>"human task tests.", "execution_time"=>"15", "programming_technologies"=>"raisl + jbpm"}
+Completed in 23ms (View: 14, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#index to xml (for 127.0.0.1 at 2010-07-11 02:00:40) [GET]
+  Parameters: {"professor_id"=>"1", "title"=>"Testing Human Tasks", "student_id"=>"1", "consultant_name"=>"Petrov", "description"=>"No desc.", "annotation"=>"human task tests.", "execution_time"=>"15", "programming_technologies"=>"raisl + jbpm"}
+  [4;36;1mThesisProposal Load (1.0ms)[0m   [0;1mSELECT * FROM "thesis_proposals" [0m
+Completed in 37ms (View: 20, DB: 1) | 200 OK [http://localhost/thesis_proposals.xml?annotation=human+task+tests.&title=Testing+Human+Tasks&professor_id=1&description=No+desc.&execution_time=15&consultant_name=Petrov&student_id=1&programming_technologies=raisl+%2B+jbpm&_method=post]
+
+
+Processing ThesisProposalsController#index to xml (for 127.0.0.1 at 2010-07-11 02:01:03) [GET]
+  [4;35;1mThesisProposal Load (1.0ms)[0m   [0mSELECT * FROM "thesis_proposals" [0m
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 02:05:09) [POST]
+  Parameters: {"professor_id"=>"1", "title"=>"sdf", "student_id"=>"asdf", "consultant_name"=>"sdfg", "description"=>"adsf", "annotation"=>"sdafa", "execution_time"=>"23", "programming_technologies"=>"adsf"}
+Completed in 36ms (View: 15, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 02:08:28) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"Kamen Plqka Angry Birds", "consultant_name"=>"Epikurei", "description"=>"Ti luuuuuud li si?", "annotation"=>"Kva anotaciq, be, kvi 5 BGN?!", "programming_technologies"=>"rails + jbpm + magic", "execution_time"=>"\\23"}}
+Completed in 26ms (View: 6, DB: 0) | 422 Unprocessable Entity [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-11 02:10:02) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"Trkkd", "consultant_name"=>"kdfo osi", "description"=>"asdagsd dsagadsgs", "annotation"=>"sdfg", "programming_technologies"=>"rails + jbpm + magic", "execution_time"=>"43"}}
+  [4;36;1mThesisProposal Create (1.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-10 23:10:02', 'Trkkd', 1, 'kdfo osi', 'asdagsd dsagadsgs', 'sdfg', 'rails + jbpm + magic', 43, '2010-07-10 23:10:02')[0m
+Redirected to http://localhost:3000/thesis_proposals/4
+Completed in 5460ms (DB: 1) | 302 Found [http://localhost/thesis_proposals]
+
+
+Processing ThesisProposalsController#show (for 127.0.0.1 at 2010-07-11 02:10:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mThesisProposal Load (1.0ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 4) [0m
+Rendering thesis_proposals/show
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/thesis_proposals/4]
+
+
+Processing ThesisProposalsController#create (for 127.0.0.1 at 2010-07-11 02:16:37) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"sdg", "consultant_name"=>"sadf asdf ", "description"=>"adsf", "annotation"=>"adsg", "programming_technologies"=>"asdf dsaf + fds", "execution_time"=>"45"}}
+  [4;36;1mThesisProposal Create (1.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-10 23:16:37', 'sdg', 1, 'sadf asdf ', 'adsf', 'adsg', 'asdf dsaf + fds', 45, '2010-07-10 23:16:37')[0m
+Redirected to http://localhost:3000/thesis_proposals/5
+Completed in 310ms (DB: 1) | 302 Found [http://localhost/thesis_proposals]
+
+
+Processing ThesisProposalsController#show (for 127.0.0.1 at 2010-07-11 02:16:38) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mThesisProposal Load (0.0ms)[0m   [0mSELECT * FROM "thesis_proposals" WHERE ("thesis_proposals"."id" = 5) [0m
+Rendering thesis_proposals/show
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/thesis_proposals/5]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 02:19:30) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"sadfasdf", "consultant_name"=>"sdfdsa adsf", "description"=>"KKAF 5", "annotation"=>"sadfasd", "programming_technologies"=>"php + apache", "execution_time"=>"45"}}
+  [4;36;1mThesisProposal Create (1.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-10 23:19:30', 'sadfasdf', 1, 'sdfdsa adsf', 'KKAF 5', 'sadfasd', 'php + apache', 45, '2010-07-10 23:19:30')[0m
+Completed in 141ms (View: 11, DB: 1) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 02:22:17) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"KDf ds fds", "consultant_name"=>"sdf asdf asd", "description"=>"asdfas", "annotation"=>"sdfa sdf", "programming_technologies"=>"aasdf + gds ", "execution_time"=>"45"}}
+  [4;35;1mThesisProposal Create (1.0ms)[0m   [0mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-10 23:22:17', 'KDf ds fds', 1, 'sdf asdf asd', 'asdfas', 'sdfa sdf', 'aasdf + gds ', 45, '2010-07-10 23:22:17')[0m
+Completed in 208ms (View: 4, DB: 1) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 02:52:05) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"fgds", "consultant_name"=>"sfas", "description"=>"dsfg", "annotation"=>"dfsg", "programming_technologies"=>"sdg", "execution_time"=>"45"}}
+  [4;36;1mThesisProposal Create (1.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-10 23:52:05', 'fgds', 1, 'sfas', 'dsfg', 'dfsg', 'sdg', 45, '2010-07-10 23:52:05')[0m
+Completed in 135ms (View: 3, DB: 1) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 03:05:53) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"Are stiga", "consultant_name"=>"sdf sad", "description"=>"sdafa", "annotation"=>"sdfsd", "programming_technologies"=>"sdfdsa dss", "execution_time"=>"45"}}
+  [4;35;1mThesisProposal Create (1.0ms)[0m   [0mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-11 00:05:53', 'Are stiga', 1, 'sdf sad', 'sdafa', 'sdfsd', 'sdfdsa dss', 45, '2010-07-11 00:05:53')[0m
+Completed in 104ms (View: 3, DB: 1) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 03:08:09) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"fdsgdsf", "consultant_name"=>"adsf", "description"=>"fds", "annotation"=>"fdsg", "programming_technologies"=>"gdfg", "execution_time"=>"45"}}
+  [4;36;1mThesisProposal Create (1.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-11 00:08:09', 'fdsgdsf', 1, 'adsf', 'fds', 'fdsg', 'gdfg', 45, '2010-07-11 00:08:09')[0m
+Completed in 138ms (View: 4, DB: 1) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 03:12:06) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"adsf dsfa", "consultant_name"=>"sdfasd", "description"=>"tyu pp", "annotation"=>"sda sahh", "programming_technologies"=>"sdf - dsf", "execution_time"=>"45"}}
+  [4;35;1mThesisProposal Create (1.0ms)[0m   [0mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-11 00:12:06', 'adsf dsfa', 1, 'sdfasd', 'tyu pp', 'sda sahh', 'sdf - dsf', 45, '2010-07-11 00:12:06')[0m
+Completed in 191ms (View: 3, DB: 1) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 03:15:01) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"ArE!!!", "consultant_name"=>"PESHO", "description"=>"adsfsa sdf sadf", "annotation"=>"sdfas", "programming_technologies"=>"fds f + dfs", "execution_time"=>"42"}}
+  [4;36;1mThesisProposal Create (0.0ms)[0m   [0;1mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-11 00:15:01', 'ArE!!!', 1, 'PESHO', 'adsfsa sdf sadf', 'sdfas', 'fds f + dfs', 42, '2010-07-11 00:15:01')[0m
+Completed in 138ms (View: 3, DB: 0) | 201 Created [http://localhost/thesis_proposals.xml]
+
+
+Processing ThesisProposalsController#create to xml (for 127.0.0.1 at 2010-07-11 03:19:50) [POST]
+  Parameters: {"thesis_proposal"=>{"professor_id"=>"1", "student_id"=>"1", "title"=>"PESTER", "consultant_name"=>"adsfsdfa", "description"=>"sdafsadf", "annotation"=>"sdfs", "programming_technologies"=>"sdaf asdf+ dsfsd", "execution_time"=>"43"}}
+  [4;35;1mThesisProposal Create (0.0ms)[0m   [0mINSERT INTO "thesis_proposals" ("professor_id", "accepted", "updated_at", "title", "student_id", "consultant_name", "description", "annotation", "programming_technologies", "execution_time", "created_at") VALUES(1, NULL, '2010-07-11 00:19:50', 'PESTER', 1, 'adsfsdfa', 'sdafsadf', 'sdfs', 'sdaf asdf+ dsfsd', 43, '2010-07-11 00:19:50')[0m
+Completed in 93ms (View: 3, DB: 0) | 201 Created [http://localhost/thesis_proposals.xml]
